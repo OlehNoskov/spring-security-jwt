@@ -1,5 +1,6 @@
 package io.getarrays.springsecurity.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -28,6 +29,7 @@ public class User implements UserDetails {
     private Long id;
     private String firstname;
     private String lastname;
+    @Column(unique = true)
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
